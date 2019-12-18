@@ -5,7 +5,7 @@
       Tip 2: you can also add an image using data-image tag
   -->
   <div class="logo">
-    <a href="https://creative-tim.com/" class="simple-text logo-normal">
+    <a href="#" class="simple-text logo-normal">
       {{ __('Creative Tim') }}
     </a>
   </div>
@@ -39,9 +39,17 @@
               </a>
             </li>
           </ul>
-        </div>
+        </div> 
       </li>
-      <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
+      @if (Auth::user()->hasRole('SuperAdmin'))
+        <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
+          <a class="nav-link" href="{{ route('table') }}">
+            <i class="material-icons">content_paste</i>
+              <p>Temporal</p>
+          </a>
+        </li>
+      @endif
+      <!-- <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('table') }}">
           <i class="material-icons">content_paste</i>
             <p>{{ __('Table List') }}</p>
@@ -52,8 +60,8 @@
           <i class="material-icons">library_books</i>
             <p>{{ __('Typography') }}</p>
         </a>
-      </li>
-      <li class="nav-item{{ $activePage == 'icons' ? ' active' : '' }}">
+      </li> -->
+      <!-- <li class="nav-item{{ $activePage == 'icons' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('icons') }}">
           <i class="material-icons">bubble_chart</i>
           <p>{{ __('Icons') }}</p>
@@ -76,13 +84,13 @@
           <i class="material-icons">language</i>
           <p>{{ __('RTL Support') }}</p>
         </a>
-      </li>
-      <li class="nav-item active-pro{{ $activePage == 'upgrade' ? ' active' : '' }}">
+      </li> -->
+      <!-- <li class="nav-item active-pro{{ $activePage == 'upgrade' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('upgrade') }}">
           <i class="material-icons">unarchive</i>
           <p>{{ __('Upgrade to PRO') }}</p>
         </a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </div>

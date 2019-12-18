@@ -23,4 +23,9 @@ class HomeController extends Controller
     {
         return view('dashboard');
     }
+
+    public function buscarPalabras()
+    {
+        echo $_POST['palabras_clave'] . ' - ' . $_POST['i_ide_usr'];
+    }
 }
