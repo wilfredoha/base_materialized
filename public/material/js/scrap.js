@@ -5,6 +5,8 @@ $.ajaxSetup({
 $(document).on('click', '#btn_palabras_clave', function(){
 
     var palabras_clave = $('#palabras_clave').val();
+    var palabras_clave = palabras_clave.split(' ').join('%20');
+
     var i_ide_usr = $(this).attr("data-id");
 
 	$.ajax({
