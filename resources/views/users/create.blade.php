@@ -43,6 +43,23 @@
                   </div>
                 </div>
                 <div class="row">
+                  <label class="col-sm-2 col-form-label">Rol</label>
+                  <div class="col-sm-7">
+                    <div class="form-group{{ $errors->has('rol') ? ' has-danger' : '' }}">
+                      <select class="form-control" name="rol" id="input-rol" value="{{ old('rol') }}" placeholder="Rol" required>
+                        <option class="col-form-label" value="0">-----Selecione-----</option>
+                        @foreach($roles as $ro)
+                        <option value="{{$ro->id}}">{{$ro->description}}</option>
+                        @endforeach
+                      </select>
+                      <!-- <input class="form-control{{ $errors->has('rol') ? ' is-invalid' : '' }}" name="rol" id="input-rol" type="text" placeholder="Rol" value="{{ old('rol') }}" required /> -->
+                      @if ($errors->has('rol'))
+                        <span id="rol-error" class="error text-danger" for="input-rol">{{ $errors->first('rol') }}</span>
+                      @endif
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
                   <label class="col-sm-2 col-form-label" for="input-password">{{ __(' Password') }}</label>
                   <div class="col-sm-7">
                     <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
