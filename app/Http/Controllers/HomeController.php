@@ -27,7 +27,9 @@ class HomeController extends Controller
     public function buscarPalabras()
     {
         $palabras = $_POST['palabras_clave'];
-        // exec('runredalyc "'.$palabras.'" .');
+
+        exec('runredalyc "linked%20data" .');
+
         echo $_POST['palabras_clave'] . ' - ' . $_POST['i_ide_usr'];
     }
 }
