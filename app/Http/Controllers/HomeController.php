@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Mail\TestEmail;
+use Mail;
 
 class HomeController extends Controller
 {
@@ -27,9 +29,14 @@ class HomeController extends Controller
     public function buscarPalabras()
     {
         $palabras = $_POST['palabras_clave'];
+        $palabras = '"'.$palabras.'"';
 
-        exec('runredalyc "linked%20data" .');
+        $data = ['message' => 'This is a test!'];
 
-        echo $_POST['palabras_clave'] . ' - ' . $_POST['i_ide_usr'];
+        Mail::to('wilfredoholguin76@gmail.com')->send(new TestEmail($data));
+
+        // exec('runredalyc '.$palabras.' .');
+
+        // echo $palabras . ' - ' . $_POST['i_ide_usr'];
     }
 }
