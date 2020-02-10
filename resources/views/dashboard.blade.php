@@ -86,7 +86,7 @@
                   </div>
                 </div> -->
                 <div class="col-md-4">
-                  <button type="submit" class="btn btn-success pull-right" id="btn_palabras_clave" data-id="{{Auth::user()->id}}"> Buscar </button>
+                  <button type="submit" style="width: 100%" class="btn btn-success btn-sm pull-right" id="btn_palabras_clave" data-id="{{Auth::user()->id}}"> Buscar </button>
                 </div>
                 <div class="clearfix"></div>
               <!-- </form> -->
@@ -122,21 +122,20 @@
                 <div class="table-responsive">
                   <table class="table">
                     <thead class=" text-success">
-                      <th>
-                          {{ __('Name') }}
-                      </th>
-                      <th>
-                        {{ __('Email') }}
-                      </th>
-                      <th>
-                        {{ __('Creation date') }}
-                      </th>
-                      <th class="text-right">
-                        {{ __('Actions') }}
-                      </th>
+                      <tr>
+                        <th>Palabras Clave</th>
+                        <th>Fecha</th>
+                        <th><center>Descargar</center></th>
+                      </tr>
                     </thead>
                     <tbody>
-                      
+                      @foreach($consultas as $con)
+                        <tr>
+                          <td>{{$con->palabras_clave}}</td>
+                          <td>{{$con->fecha}}</td>
+                          <td><center><a class="btn btn-warning btn-sm" id="descargarResultado" data-id="{{$con->id}}" role="button" data-toggle="tooltip" data-placement="top" data-original-title="Descargar resultado"><icons-image _ngcontent-rgp-c22="" _nghost-rgp-c19=""><i _ngcontent-rgp-c19="" class="material-icons icon-image-preview text-white">get_app</i></icons-image></a></center></td>
+                        </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>

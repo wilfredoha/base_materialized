@@ -60,3 +60,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::post('buscarPalabras', 'HomeController@buscarPalabras');
+Route::get('descargarResultado', 'HomeController@descargarResultado');
