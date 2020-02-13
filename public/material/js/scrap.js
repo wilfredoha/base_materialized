@@ -64,6 +64,23 @@ $(document).on('click', '#primeraConsulta', function(){
 
     palabras_clave = palabras_clave.split(' ').join('%20');
 
+	$.ajax({
+		type : 'POST',
+        url  : 'primeraConsulta',
+        data : { palabras_clave : palabras_clave },
+		beforeSend: function(){
+			
+	    },
+		success: function(data){
+			$('#detalle').html(data);
+	    },
+		error: function(data){
+            Swal.fire({icon: 'error',title: 'Oops...',text: 'Intente de nuevo!'})
+		}
+    });
+
+
+
 	// $.ajax({
 	// 	url: 'https://www.redalyc.org/service/r2020/getArticles/'+ palabras_clave + '%3C%3C%3C%3C%3C%3C1%3C%3C%3C%3C%3C%3C/1/50/0/default',
 	// 	type : 'GET',
@@ -84,13 +101,14 @@ $(document).on('click', '#primeraConsulta', function(){
  //            Swal.fire({icon: 'error',title: 'Oops...',text: 'Intente de nuevo!'})
 	// 	}
  //    });
- 	const proxyurl = "https://cors-anywhere.herokuapp.com/";
- 	const url = 'https://www.redalyc.org/service/r2020/getArticles/'+ palabras_clave + '/1/10/1/default'; // site that doesn’t send Access-Control-*
- 	fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
- 	.then(response => response.text())
- 	.then(contents => prueba(JSON.parse(contents)))
- 	// .then(contents => console.log(contents))
- 	.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+ 	
+ 	// const proxyurl = "https://cors-anywhere.herokuapp.com/";
+ 	// const url = 'https://www.redalyc.org/service/r2020/getArticles/'+ palabras_clave + '/1/10/1/default'; // site that doesn’t send Access-Control-*
+ 	// fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://example.com
+ 	// .then(response => response.text())
+ 	// .then(contents => prueba(JSON.parse(contents)))
+ 	// // .then(contents => console.log(contents))
+ 	// .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
 
 
 });

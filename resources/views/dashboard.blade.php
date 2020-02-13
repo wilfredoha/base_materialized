@@ -26,6 +26,19 @@
           </div>
         </div>
       </div>
+
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-success">
+            <h4 class="card-title ">Detalles</h4>
+            <p class="card-category"> Búsqueda realizada  - filtros</p>
+          </div>
+          <div class="card-body">
+            <div id="detalle"></div>
+          </div>
+        </div>
+      </div>
+
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-success">
@@ -58,5 +71,4 @@
       </div>
     </div>
   </div>
-  <div id="detalle"></div>
 @endsection
