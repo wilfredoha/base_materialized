@@ -1,4 +1,4 @@
-{{$totalResultados}}
+<h4>Criterio de búsqueda: {{$pal_bus}} - Total resultados: {{$totalResultados}}</h4>
 <hr>
 <div class="row">
 	@foreach($anios as $a)
@@ -33,5 +33,7 @@
 </div>
 <hr>
 <div class="col-md-4">
-    <button type="submit" style="width: 100%" class="btn btn-success btn-sm float-right" id="btn_palabras_clave" data-id="{{Auth::user()->id}}"> Consultar </button>
+    <button type="submit" style="width: 100%" class="btn btn-success btn-sm float-right" id="btn_busqueda_filtro" data-id="{{Auth::user()->id}}"> Consultar </button>
 </div>
+
+<input type="hidden" id="pal_cla" value="{{$palabras_clave}}">

@@ -31,26 +31,11 @@ class HomeController extends Controller
         return view('dashboard', compact('consultas'));
     }
 
-    public function buscarPalabras()
-    {
-        $i_ide_usr = $_POST['i_ide_usr'];
-
-        $palabras  = $_POST['palabras_clave'];
-        $palabras  = '"'.$palabras.'"';
-        
-        exec("runredalyc $palabras $i_ide_usr .");
-
-        $email = DB::table('users')->select('email')->where('id', $i_ide_usr)->first();
-        $email = $email->email;
-
-        $data = ['message' => 'This is a test!'];
-        Mail::to($email)->send(new TestEmail($data));
-    }
-
     public function primeraConsulta()
     {
         $palabras_clave  = $_POST['palabras_clave'];
-        $get_data        = $this->callAPI('GET', 'https://www.redalyc.org/service/r2020/getArticles/".$palabras_clave."/1/10/1/default', false);
+        $pal_bus         = $_POST['pal_bus'];
+        $get_data        = $this->callAPI('GET', "https://www.redalyc.org/service/r2020/getArticles/".$palabras_clave."/1/10/1/default", false);
         $response        = json_decode($get_data, true);
         $filtros         = $response['filtros'];
         $totalResultados = $response['totalResultados'];
@@ -58,8 +43,23 @@ class HomeController extends Controller
         $idioma          = $filtros[1]['elementos'];
         $disciplina      = $filtros[2]['elementos'];
         $pais            = $filtros[3]['elementos'];
-// dd($filtros);
-        return view('home.ajax.primeraConsulta', compact('totalResultados', 'anios', 'idioma', 'disciplina', 'pais'));
+
+        return view('home.ajax.primeraConsulta', compact('pal_bus', 'palabras_clave', 'totalResultados', 'anios', 'idioma', 'disciplina', 'pais'));
+    }
+
+    public function buscarPalabras()
+    {
+        $i_ide_usr = Auth::user()->id;
+
+        $url  = $_POST['url'];
+        dd($url);
+        exec("runredalyc $palabras $i_ide_usr .");
+
+        $email = DB::table('users')->select('email')->where('id', $i_ide_usr)->first();
+        $email = $email->email;
+
+        $data = ['message' => 'This is a test!'];
+        Mail::to($email)->send(new TestEmail($data));
     }
 
     public function callAPI($method, $url, $data){

@@ -19,7 +19,7 @@
                     </div>
                   </div>
                   <div class="col-md-4">
-                    <button type="submit" style="width: 100%" class="btn btn-success btn-sm pull-right" id="primeraConsulta" data-id="{{Auth::user()->id}}"> Buscar </button> <!-- btn_palabras_clave -->
+                    <button type="submit" style="width: 100%" class="btn btn-success btn-sm pull-right" id="primeraConsulta"> Buscar </button> <!-- btn_palabras_clave -->
                   </div>
                 <div class="clearfix"></div>
             </div>
