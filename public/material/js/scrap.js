@@ -22,6 +22,7 @@ $(document).on('click', '#primeraConsulta', function(){
         data : { palabras_clave : palabras_clave, pal_bus : pal_bus },
 		beforeSend: function(){
 			$('#palabras_clave').val('');
+			$('#detalle').html('');
 			$("#overlay").fadeIn(300);　
 	    },
 		success: function(data){
@@ -96,7 +97,8 @@ $(document).on('click', '#btn_busqueda_filtro', function(){
     });
 
     filtro = filtroanio + " <br> " + filtroidio + " <br> " + filtrodisc + " <br> " + filtropais;
-
+// alert(filtro);
+// return;
 	url = "service/r2020/getArticles/" + textoABuscar +"<<<"+cadenaYear+"<<<"+cadenaIdioma+"<<<"+cadenaDisciplina+"<<<"+cadenaPais+ "/paginador/50/0/default";
 	
 	$.ajax({
