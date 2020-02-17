@@ -52,8 +52,9 @@ class HomeController extends Controller
         $i_ide_usr = Auth::user()->id;
 
         $url  = $_POST['url'];
-        dd($url);
-        exec("runredalyc $palabras $i_ide_usr .");
+        $fil  = $_POST['filtro'];
+        // dd($fil);
+        exec("runredalyc $palabras $i_ide_usr $url $fil .");
 
         $email = DB::table('users')->select('email')->where('id', $i_ide_usr)->first();
         $email = $email->email;

@@ -18,6 +18,7 @@
     <link href="{{ asset('material') }}/demo/demo.css" rel="stylesheet" />
 
     <link href="{{ asset('material') }}/css/sweetalert2.css" rel="stylesheet" />
+    <link href="{{ asset('material') }}/css/scrap.css" rel="stylesheet" />
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -29,7 +30,11 @@
         @guest()
             @include('layouts.page_templates.guest')
         @endguest
-        
+        <div id="overlay">
+          <div class="cv-spinner">
+            <span class="spinner"></span>
+          </div>
+        </div>
         <div class="fixed-plugin">
           <div class="dropdown show-dropdown">
             <a href="#" data-toggle="dropdown">
