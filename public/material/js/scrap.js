@@ -4,10 +4,6 @@ $.ajaxSetup({
 	headers: { 'X-CSRF-Token' : $('meta[name=csrf-token]').attr('content') }
 });
 
-$(document).ajaxSend(function() {
-	$("#overlay").fadeIn(300);　
-});
-
 //búsqueda inicial para obtener filtros
 $(document).on('click', '#primeraConsulta', function(){
 	var palabras_clave = $('#palabras_clave').val();
@@ -26,6 +22,7 @@ $(document).on('click', '#primeraConsulta', function(){
         data : { palabras_clave : palabras_clave, pal_bus : pal_bus },
 		beforeSend: function(){
 			$('#palabras_clave').val('');
+			$("#overlay").fadeIn(300);　
 	    },
 		success: function(data){
 			setTimeout(function(){
@@ -126,7 +123,7 @@ $(document).on('click', '#descargarResultado', function(){
         url  : 'descargarResultado',
         data : { id_busqueda : id_busqueda },
 		beforeSend: function(){
-			
+			$("#overlay").fadeIn(300);　
 	    },
 		success: function(data){
 			setTimeout(function(){

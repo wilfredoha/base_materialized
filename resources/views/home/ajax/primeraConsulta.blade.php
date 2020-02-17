@@ -3,7 +3,11 @@
 <div class="row">
 	@foreach($anios as $a)
 		<div class="col-md-3">
-			<input type="checkbox" name="anio" value="{{$a['clave']}}" data-nom="{{$a['nombre']}}"> {{$a['nombre']}} ({{$a['total']}})
+			<label class="container">{{$a['nombre']}} ({{$a['total']}})
+			  	<input type="checkbox" name="anio" value="{{$a['clave']}}" data-nom="{{$a['nombre']}}">
+			  	<span class="checkmark"></span>
+			</label>
+			<!-- <input type="checkbox" name="anio" value="{{$a['clave']}}" data-nom="{{$a['nombre']}}"> {{$a['nombre']}} ({{$a['total']}}) -->
 		</div>
 	@endforeach
 </div>
