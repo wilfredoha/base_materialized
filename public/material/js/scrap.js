@@ -96,15 +96,15 @@ $(document).on('click', '#btn_busqueda_filtro', function(){
 		}
     });
 
-    filtro = filtroanio + " <br> " + filtroidio + " <br> " + filtrodisc + " <br> " + filtropais;
+    filtro = '"'+filtroanio + " <br> " + filtroidio + " <br> " + filtrodisc + " <br> " + filtropais+'"';
 // alert(filtro);
 // return;
-	url = "service/r2020/getArticles/" + textoABuscar +"<<<"+cadenaYear+"<<<"+cadenaIdioma+"<<<"+cadenaDisciplina+"<<<"+cadenaPais+ "/paginador/50/0/default";
+	url = '"'+"service/r2020/getArticles/" + textoABuscar +"<<<"+cadenaYear+"<<<"+cadenaIdioma+"<<<"+cadenaDisciplina+"<<<"+cadenaPais+ "/paginador/50/0/default"+'"';
 	
 	$.ajax({
 		type : 'POST',
         url  : 'buscarPalabras',
-        data : { url: url, filtro : filtro },
+        data : { url: url, filtro : filtro, textoABuscar : textoABuscar },
 		beforeSend: function(){
 			Swal.fire({icon: 'info',title: 'Descarga en proceso',text: 'Recibirá un email cuando su búsqueda se haya finalizado'})
 	    },

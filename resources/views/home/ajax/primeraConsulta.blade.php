@@ -3,10 +3,7 @@
 <div class="row">
 	@foreach($anios as $a)
 		<div class="col-md-3">
-			<label class="container">{{$a['nombre']}} ({{$a['total']}})
-			  	<input type="checkbox" name="anio" value="{{$a['clave']}}" data-nom="{{$a['nombre']}}">
-			  	<span class="checkmark"></span>
-			</label>
+		  	<input type="checkbox" name="anio" value="{{$a['clave']}}" data-nom="{{$a['nombre']}}"> {{$a['nombre']}} ({{$a['total']}})
 			<!-- <input type="checkbox" name="anio" value="{{$a['clave']}}" data-nom="{{$a['nombre']}}"> {{$a['nombre']}} ({{$a['total']}}) -->
 		</div>
 	@endforeach
@@ -15,10 +12,7 @@
 <div class="row">
 	@foreach($idioma as $i)
 		<div class="col-md-3">
-			<label class="container">{{$i['nombre']}} ({{$i['total']}})
-			  	<input type="checkbox" name="idio" value="{{$i['clave']}}" data-nom="{{$i['nombre']}}"> 
-			  	<span class="checkmark"></span>
-			</label>
+		  	<input type="checkbox" name="idio" value="{{$i['clave']}}" data-nom="{{$i['nombre']}}"> {{$i['nombre']}} ({{$i['total']}})
 		</div>
 	@endforeach	
 </div>
@@ -26,10 +20,7 @@
 <div class="row">
 	@foreach($disciplina as $d)
 		<div class="col-md-4">
-			<label class="container">{{$d['nombre']}} ({{$d['total']}})
-			  	<input type="checkbox" name="disc" value="{{$d['clave']}}" data-nom="{{$d['nombre']}}"> 
-			  	<span class="checkmark"></span>
-			</label>
+		  	<input type="checkbox" name="disc" value="{{$d['clave']}}" data-nom="{{$d['nombre']}}"> {{$d['nombre']}} ({{$d['total']}})
 		</div>
 	@endforeach
 </div>
@@ -37,10 +28,7 @@
 <div class="row">
 	@foreach($pais as $p)
 		<div class="col-md-3">
-			<label class="container">{{$p['nombre']}} ({{$p['total']}})
-			  	<input type="checkbox" name="pais" value="{{$p['clave']}}" data-nom="{{$p['nombre']}}"> 
-			  	<span class="checkmark"></span>
-			</label>
+		  	<input type="checkbox" name="pais" value="{{$p['clave']}}" data-nom="{{$p['nombre']}}"> {{$p['nombre']}} ({{$p['total']}})
 		</div>
 	@endforeach	
 </div>
