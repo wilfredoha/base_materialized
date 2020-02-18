@@ -43,7 +43,7 @@
       </li> -->
       @if (Auth::user()->hasRole('SuperAdmin'))
         <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
-          <a class="nav-link" href="{{ route('user.index') }}">
+          <a class="nav-link" href="{{ asset('users') }}">
             <i class="material-icons">face</i>
               <p>Usuarios</p>
           </a>

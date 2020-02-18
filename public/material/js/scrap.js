@@ -125,7 +125,7 @@ $(document).on('click', '#descargarResultado', function(){
         url  : 'descargarResultado',
         data : { id_busqueda : id_busqueda },
 		beforeSend: function(){
-			$("#overlay").fadeIn(300);　
+			$("#overlay").fadeIn(300);
 	    },
 		success: function(data){
 			setTimeout(function(){
@@ -136,6 +136,122 @@ $(document).on('click', '#descargarResultado', function(){
 		error: function(data){
             Swal.fire({icon: 'error',title: 'Oops...',text: 'Intente de nuevo!'})
 		}
+    });
+});
+
+$(document).on('click', '#modalCrearUsuario', function(){
+	$('.modalCrearUsuario').modal("show");
+});
+
+$(document).on('click', '#btn_guardarUsuario', function(){
+    var expre_reg = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+	var usu_nom = $('#usu_nom').val();
+	var usu_ema = $('#usu_ema').val();
+	var usu_pas = $('#usu_pas').val();
+	var usu_rol = $('#usu_rol').val();
+
+	if (usu_nom == "" || usu_ema == "" || usu_pas == "" || usu_rol == "0") {
+		Swal.fire({icon: 'warning',title: 'Atención!',text: 'Todos los campos son obligatorios!'})
+		return;
+	}
+
+	if(!usu_ema.match(expre_reg))
+	{
+	    Swal.fire({icon: 'warning',title: 'Email Invalido!',text: 'Ingresa un Email apropiado!'})
+	    return;
+	}
+
+	$.ajax({
+	    type : 'POST',
+	    data : {usu_nom : usu_nom, usu_ema : usu_ema, usu_pas : usu_pas, usu_rol : usu_rol},
+	    url  : 'guardarUsuario',
+	    beforeSend: function(){
+	        $('.modalCrearUsuario').modal("hide");
+	        $("#overlay").fadeIn(300);
+	    },
+	    success: function(data){
+	        setTimeout(function(){
+	        	$("#overlay").fadeOut(300);
+	        },500);
+	        Swal.fire({icon: 'success',title: 'Bien!',text: 'Usuario creado con éxito!'})
+	        setTimeout(function(){ window.location.reload(true) }, 3000);
+
+	    },
+	    error: function(data){
+	        setTimeout(function(){
+	        	$("#overlay").fadeOut(300);
+	        },500);
+	        Swal.fire({icon: 'error',title: 'Oops...',text: 'Intente de nuevo!'})
+	    }
+	});
+});
+
+$(document).on('click', '#btn_editarUsu', function(){
+	var ide_usr = $(this).attr('data-id');
+
+	$.ajax({
+        type : 'POST',
+        data : {ide_usr : ide_usr},
+        url  : 'editarUsuario',
+        beforeSend: function(){
+        	$("#overlay").fadeIn(300);
+        },
+        success: function(data){
+        	setTimeout(function(){
+	        	$("#overlay").fadeOut(300);
+	        },500);
+        	$('.modalEditarUsuario').modal("show");
+        	$('#formEditarUsuario').html(data);
+        },
+        error: function(data){
+        	setTimeout(function(){
+	        	$("#overlay").fadeOut(300);
+	        },500);
+	        Swal.fire({icon: 'error',title: 'Oops...',text: 'Intente de nuevo!'})
+        }
+    });
+});
+
+$(document).on('click', '#btn_editarUsuario', function(){
+	var expre_reg = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+	var usu_nomE = $('#usu_nomE').val();
+	var usu_emaE = $('#usu_emaE').val();
+	var usu_limE = $('#usu_limE').val();
+	var usu_rolE = $('#usu_rolE').val();
+	var ide_usrE = $('#ide_usrE').val();
+
+	if(usu_nomE == "" || usu_emaE == "" || usu_limE == "" || usu_rolE == "0") {
+		Swal.fire({icon: 'warning',title: 'Atención!',text: 'Todos los campos son obligatorios!'})
+		return;
+	}
+
+	if(!usu_emaE.match(expre_reg))
+	{
+	    Swal.fire({icon: 'warning',title: 'Email Invalido!',text: 'Ingresa un Email apropiado!'})
+	    return;
+	}
+
+	$.ajax({
+        type : 'POST',
+        data : {usu_nomE:usu_nomE,usu_emaE:usu_emaE,usu_limE:usu_limE,usu_rolE:usu_rolE,ide_usrE:ide_usrE},
+        url  : 'editarUsuarioFinal',
+        beforeSend: function(){
+        	$('.modalEditarUsuario').modal("hide");
+        	$("#overlay").fadeIn(300);
+        },
+        success: function(data){
+        	setTimeout(function(){
+	        	$("#overlay").fadeOut(300);
+	        },500);
+        	Swal.fire({icon: 'success',title: 'Bien!',text: 'Usuario editado con éxito!'})
+        	setTimeout(function(){ window.location.reload(true) }, 3000);
+        },
+        error: function(data){
+        	setTimeout(function(){
+	        	$("#overlay").fadeOut(300);
+	        },500);
+	        Swal.fire({icon: 'error',title: 'Oops...',text: 'Intente de nuevo!'})
+        }
     });
 });
 

@@ -62,3 +62,8 @@ Route::group(['middleware' => 'auth'], function () {
 Route::post('buscarPalabras', 'HomeController@buscarPalabras');
 Route::post('primeraConsulta', 'HomeController@primeraConsulta');
 Route::get('descargarResultado', 'HomeController@descargarResultado');
+
+Route::get('users', 'UserController@indexUsers');
+Route::post('guardarUsuario', 'UserController@guardarUsuario');
+Route::post('editarUsuario', 'UserController@editarUsuario');
+Route::post('editarUsuarioFinal', 'UserController@editarUsuarioFinal');

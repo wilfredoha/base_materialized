@@ -88,4 +88,50 @@ class UserController extends Controller
 
         return redirect()->route('user.index')->withStatus(__('User successfully deleted.'));
     }
+
+    public function indexUsers()
+    {
+        $roles = DB::table('roles')->get();
+        $users = DB::table('users')->get();
+
+        return view('users.indexUsers', compact('users', 'roles'));
+    }
+
+    public function guardarUsuario()
+    {
+        $usu_nom = $_POST['usu_nom'];
+        $usu_ema = $_POST['usu_ema'];
+        $usu_pas = $_POST['usu_pas'];
+        $usu_rol = $_POST['usu_rol'];
+
+        $id = DB::table('users')->insertGetId([
+                                                'name' => $usu_nom, 
+                                                'email' => $usu_ema,
+                                                'password' => Hash::make($usu_pas),
+                                                'limite' => 2000
+                                              ]);
+        DB::table('role_user')->insert(['user_id' => $id, 'role_id' => $usu_rol]);
+    }
+
+    public function editarUsuario()
+    {
+        $ide_usr = $_POST['ide_usr'];
+        $user    = DB::table('users')->join('role_user', 'users.id', '=', 'role_user.user_id')->where('id', $ide_usr)->first();
+        $roles   = DB::table('roles')->get();
+
+        return view('users.ajax.editarUsuario', compact('user', 'roles', 'ide_usr'));
+    }
+
+    public function editarUsuarioFinal()
+    {
+        $usu_nomE = $_POST['usu_nomE'];
+        $usu_emaE = $_POST['usu_emaE'];
+        $usu_limE = $_POST['usu_limE'];
+        $usu_rolE = $_POST['usu_rolE'];
+        $ide_usrE = $_POST['ide_usrE'];
+
+        DB::table('users')->where('id', $ide_usrE)->update(['name' => $usu_nomE, 'email' => $usu_emaE, 'limite' => $usu_limE]);
+
+        // DB::table('role_user')->where('user_id', $ide_usrE)->update(['role_id', $usu_rolE]);
+    }
 }
