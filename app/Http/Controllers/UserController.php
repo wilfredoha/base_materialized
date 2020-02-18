@@ -132,6 +132,6 @@ class UserController extends Controller
 
         DB::table('users')->where('id', $ide_usrE)->update(['name' => $usu_nomE, 'email' => $usu_emaE, 'limite' => $usu_limE]);
 
-        // DB::table('role_user')->where('user_id', $ide_usrE)->update(['role_id', $usu_rolE]);
+        DB::table('role_user')->where('user_id', $ide_usrE)->update(['role_id' => $usu_rolE]);
     }
 }

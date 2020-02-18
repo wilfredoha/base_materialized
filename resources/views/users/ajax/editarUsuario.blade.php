@@ -18,4 +18,4 @@
       </select>
   </div>
 </div>
-<input type="hidden" id="ide_usrE">
+<input type="hidden" id="ide_usrE" value="{{$ide_usr}}">
