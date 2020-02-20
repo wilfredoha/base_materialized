@@ -1,5 +1,6 @@
 <h4>Criterio de búsqueda: {{$pal_bus}} - Total resultados: {{$totalResultados}}</h4>
 <hr>
+<h4>Seleccione los años</h4><br>
 <div class="row">
 	@foreach($anios as $a)
 		<div class="col-md-3">
@@ -9,6 +10,7 @@
 	@endforeach
 </div>
 <hr>
+<h4>Seleccione los idiomas</h4><br>
 <div class="row">
 	@foreach($idioma as $i)
 		<div class="col-md-3">
@@ -17,6 +19,7 @@
 	@endforeach	
 </div>
 <hr>
+<h4>Seleccione las disciplinas</h4><br>
 <div class="row">
 	@foreach($disciplina as $d)
 		<div class="col-md-4">
@@ -25,6 +28,7 @@
 	@endforeach
 </div>
 <hr>
+<h4>Seleccione los países</h4><br>
 <div class="row">
 	@foreach($pais as $p)
 		<div class="col-md-3">

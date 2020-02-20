@@ -45,10 +45,10 @@ $(document).on('click', '#btn_busqueda_filtro', function(){
     var cadenaIdioma     = "";
 	var cadenaDisciplina = "";
 	var url              = "";
-	var filtroanio       = "<b>Año: </b>";
-	var filtroidio       = "<b>Idioma: </b>";
-	var filtrodisc       = "<b>Disciplina: </b>";
-	var filtropais       = "<b>País: </b>";
+	var filtroanio       = "<b>Año:</b>";
+	var filtroidio       = "<b>Idioma:</b>";
+	var filtrodisc       = "<b>Disciplina:</b>";
+	var filtropais       = "<b>País:</b>";
 	var filtro           = "";
 
     if(palabras_clave == ""){
@@ -62,7 +62,7 @@ $(document).on('click', '#btn_busqueda_filtro', function(){
         	filtroanio     = filtroanio + $(this).attr('data-nom');
         }else{
         	cadenaYear+="-"+$(this).val();
-        	filtroanio     = filtroanio +  " - " + $(this).attr('data-nom');
+        	filtroanio = filtroanio +  " - " + $(this).attr('data-nom');
         }
     });
 
@@ -72,14 +72,14 @@ $(document).on('click', '#btn_busqueda_filtro', function(){
         	filtroidio       = filtroidio + $(this).attr('data-nom');
         }else{
         	cadenaIdioma+="-"+$(this).val();
-        	filtroidio       = filtroidio + " - " + $(this).attr('data-nom');
+        	filtroidio   = filtroidio + " - " + $(this).attr('data-nom');
         }
     });
     
     $.each($("input[name='disc']:checked"), function(){
         if (cadenaDisciplina == "") {
         	cadenaDisciplina = $(this).val();
-        	filtrodisc           = filtrodisc + $(this).attr('data-nom');
+        	filtrodisc       = filtrodisc + $(this).attr('data-nom');
         }else{
         	cadenaDisciplina+="-"+$(this).val();
         	filtrodisc           = filtrodisc +  " - " + $(this).attr('data-nom');
@@ -96,7 +96,7 @@ $(document).on('click', '#btn_busqueda_filtro', function(){
 		}
     });
 
-    filtro = '"'+filtroanio + " <br> " + filtroidio + " <br> " + filtrodisc + " <br> " + filtropais+'"';
+    filtro = '"'+filtroanio + "<br>" + filtroidio + "<br>" + filtrodisc + "<br>" + filtropais+'"';
 // alert(filtro);
 // return;
 	url = '"'+"service/r2020/getArticles/" + textoABuscar +"<<<"+cadenaYear+"<<<"+cadenaIdioma+"<<<"+cadenaDisciplina+"<<<"+cadenaPais+ "/paginador/50/0/default"+'"';
