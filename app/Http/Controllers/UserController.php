@@ -136,6 +136,10 @@ class UserController extends Controller
         $usu_rolE = $_POST['usu_rolE'];
         $ide_usrE = $_POST['ide_usrE'];
 
+        if ($usu_limE < 50) {
+            $usu_limE = 50;
+        }
+
         DB::table('users')->where('id', $ide_usrE)->update(['name' => $usu_nomE, 'email' => $usu_emaE, 'limite' => $usu_limE]);
 
         DB::table('role_user')->where('user_id', $ide_usrE)->update(['role_id' => $usu_rolE]);
