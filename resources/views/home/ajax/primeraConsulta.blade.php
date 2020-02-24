@@ -5,7 +5,6 @@
 	@foreach($anios as $a)
 		<div class="col-md-3">
 		  	<input type="checkbox" name="anio" value="{{$a['clave']}}" data-nom="{{$a['nombre']}}"> {{$a['nombre']}} ({{$a['total']}})
-			<!-- <input type="checkbox" name="anio" value="{{$a['clave']}}" data-nom="{{$a['nombre']}}"> {{$a['nombre']}} ({{$a['total']}}) -->
 		</div>
 	@endforeach
 </div>
@@ -42,3 +41,5 @@
 </div>
 
 <input type="hidden" id="pal_cla" value="{{$palabras_clave}}">
+
+<style type="text/css"></style>
