@@ -23,7 +23,9 @@ class ResultadoDescargar implements FromCollection, WithHeadings, WithTitle
     {
         $id = $this->id;
 
-        $reporte = DB::table('informacion')->where('id_busqueda', $id)->get();
+        $reporte = DB::table('informacion')->where('id_busqueda', $id)
+               ->select('institucion', 'titulo', 'revista', 'autores', 'resumen', 'contenido', 'palabras', 'doi', 'idioma_articulo', 'ruta_html', 'ruta_pdf', 'paginas', 'issn', 'id_revista', 'id_articulo')
+               ->get();
 
         return collect($reporte);
     }
@@ -36,11 +38,21 @@ class ResultadoDescargar implements FromCollection, WithHeadings, WithTitle
     public function headings() : array
     {
         return [
-            '1',
-            '2',
-            '3',
-            '4',
-            '5'
+            'INSTITUCION',
+            'TITULO',
+            'REVISTA',
+            'AUTORES',
+            'RESUMEN',
+            'CONTENIDO',
+            'PALABRAS',
+            'DOI',
+            'IDIOMA',
+            'RUTA HTML',
+            'RUTA PDF',
+            'PAGINAS',
+            'ISSN',
+            'ID REVISTA',
+            'ID ARTICULO'
         ];
     }
 }
