@@ -60,7 +60,7 @@ class HomeController extends Controller
         $email = DB::table('users')->select('email')->where('id', $i_ide_usr)->first();
         $email = $email->email;
 
-        $data = ['message' => 'This is a test!'];
+        $data = ['message' => 'El resultado de la búsqueda - ' . str_replace("%20"," ", $pal) . ' - ha finalizado'];
         Mail::to($email)->send(new TestEmail($data));
     }
 
