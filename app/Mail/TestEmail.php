@@ -26,7 +26,7 @@ class TestEmail extends Mailable
     public function build()
     {
         $address = 'info@descarga.com';
-        $subject = 'Su archivo está listo my friend!';
+        $subject = 'Su archivo está listo para ser descargado!';
         $name = 'Ínfo';
         
         return $this->view('emails.test')

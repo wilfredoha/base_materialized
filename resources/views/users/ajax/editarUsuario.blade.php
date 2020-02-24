@@ -7,7 +7,7 @@
       <input type="text" class="form-control form-control-sm" id="usu_emaE" placeholder="E-mail del usuario" value="{{$user->email}}">
   </div>
   <div class="form-group col-md-12">
-      <input type="number" class="form-control form-control-sm" id="usu_limE" placeholder="Límite de búsqueda" value="{{$user->limite}}">
+      <input type="number" class="form-control form-control-sm" id="usu_limE" min="50" placeholder="Límite de búsqueda" value="{{$user->limite}}">
   </div>
   <div class="form-group col-md-12">
       <select class="form-control form-control-sm" id="usu_rolE">
