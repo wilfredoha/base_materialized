@@ -44,6 +44,22 @@ class HomeController extends Controller
         $disciplina      = $filtros[2]['elementos'];
         $pais            = $filtros[3]['elementos'];
 
+        usort($anios, function($a, $b) {
+            return $b['clave'] <=> $a['clave'];
+        });
+
+        usort($idioma, function($a, $b) {
+            return $a['nombre'] <=> $b['nombre'];
+        });
+
+        usort($disciplina, function($a, $b) {
+            return $a['nombre'] <=> $b['nombre'];
+        });
+
+        usort($pais, function($a, $b) {
+            return $a['nombre'] <=> $b['nombre'];
+        });
+
         return view('home.ajax.primeraConsulta', compact('pal_bus', 'palabras_clave', 'totalResultados', 'anios', 'idioma', 'disciplina', 'pais'));
     }
 
