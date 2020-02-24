@@ -54,8 +54,8 @@ class HomeController extends Controller
         $url       = $_POST['url'];
         $fil       = $_POST['filtro'];
         $pal       = $_POST['textoABuscar'];
-dd($fil);
-        exec("runredalyc $pal $i_ide_usr $url $fil .");
+
+        exec("runredalyc $pal $i_ide_usr $url $fil $limite .");
 
         $email = DB::table('users')->select('email')->where('id', $i_ide_usr)->first();
         $email = $email->email;

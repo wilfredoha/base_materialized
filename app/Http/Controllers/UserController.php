@@ -105,10 +105,10 @@ class UserController extends Controller
         $usu_rol = $_POST['usu_rol'];
 
         $id = DB::table('users')->insertGetId([
-                                                'name' => $usu_nom, 
-                                                'email' => $usu_ema,
+                                                'name'     => $usu_nom, 
+                                                'email'    => $usu_ema,
                                                 'password' => Hash::make($usu_pas),
-                                                'limite' => 2000
+                                                'limite'   => 2000
                                               ]);
         DB::table('role_user')->insert(['user_id' => $id, 'role_id' => $usu_rol]);
     }
