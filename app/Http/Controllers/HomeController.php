@@ -45,7 +45,7 @@ class HomeController extends Controller
         $pais            = $filtros[3]['elementos'];
 
         usort($anios, function($a, $b) {
-            return $b['clave'] <=> $a['clave'];
+            return $b['nombre'] <=> $a['nombre'];
         });
 
         usort($idioma, function($a, $b) {
