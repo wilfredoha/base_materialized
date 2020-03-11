@@ -6,7 +6,7 @@
   -->
   <div class="logo">
     <a href="#" class="simple-text logo-normal">
-      {{ __('Creative Tim') }}
+      M&W
     </a>
   </div>
   <div class="sidebar-wrapper">
