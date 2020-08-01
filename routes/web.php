@@ -63,6 +63,7 @@ Route::post('buscarPalabras', 'HomeController@buscarPalabras');
 Route::post('primeraConsulta', 'HomeController@primeraConsulta');
 Route::get('descargarResultado', 'HomeController@descargarResultado');
 Route::get('descargarResultadoBib', 'HomeController@descargarResultadoBib');
+Route::get('deleteBib', 'HomeController@deleteBib');
 
 Route::get('users', 'UserController@indexUsers');
 Route::post('guardarUsuario', 'UserController@guardarUsuario');

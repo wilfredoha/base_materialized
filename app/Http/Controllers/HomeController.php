@@ -148,4 +148,9 @@ class HomeController extends Controller
 
         return $ubicacion;
     }
+
+    public function deleteBib()
+    {
+      unlink($_GET['file']);
+    }
 }

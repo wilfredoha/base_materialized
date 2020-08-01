@@ -164,6 +164,17 @@ $(document).on('click', '#descargarResultadoBib', function(){
 			document.body.appendChild(a);
 			a.click();
 			document.body.removeChild(a);
+
+			$.ajax({
+	            url: 'deleteBib',
+	            data: {'file' : data },
+	            success: function (response) {
+	               // do something
+	            },
+	            error: function () {
+	               // do something
+	            }
+	        });
 	    },
 		error: function(data){
 			setTimeout(function(){
