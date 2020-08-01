@@ -47,7 +47,7 @@
         </li> -->
         <li class="nav-item dropdown">
           <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="material-icons">person</i>
+            {{Auth::user()->name}}<i class="material-icons">person</i>
             <p class="d-lg-none d-md-block">
               {{ __('Account') }}
             </p>

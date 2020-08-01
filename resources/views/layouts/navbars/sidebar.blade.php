@@ -6,7 +6,7 @@
   -->
   <div class="logo">
     <a href="#" class="simple-text logo-normal">
-      M&W
+      BLCE
     </a>
   </div>
   <div class="sidebar-wrapper">
@@ -49,6 +49,8 @@
           </a>
         </li>
       @endif
+      <center><img src="{{ asset('material') }}/img/umanizales.png" height="100" style="margin-top: 80px;"></center>
+      <center><img src="{{ asset('material') }}/img/semillero.png" height="100" style="margin-top: 10px;"></center>
       <!-- <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('table') }}">
           <i class="material-icons">content_paste</i>

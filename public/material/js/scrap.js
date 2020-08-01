@@ -134,6 +134,41 @@ $(document).on('click', '#descargarResultado', function(){
 			window.open(this.url);
 	    },
 		error: function(data){
+			setTimeout(function(){
+				$("#overlay").fadeOut(300);
+			},500);
+            Swal.fire({icon: 'error',title: 'Oops...',text: 'Intente de nuevo!'})
+		}
+    });
+});
+
+$(document).on('click', '#descargarResultadoBib', function(){
+	var id_busqueda = $(this).attr('data-id');
+
+	$.ajax({
+		type : 'GET',
+        url  : 'descargarResultadoBib',
+        data : { id_busqueda : id_busqueda },
+		beforeSend: function(){
+			$("#overlay").fadeIn(300);
+	    },
+		success: function(data){
+			setTimeout(function(){
+				$("#overlay").fadeOut(300);
+			},500);
+			// window.open(this.url);
+			var file_path = data;
+			var a = document.createElement('A');
+			a.href = file_path;
+			a.download = file_path.substr(file_path.lastIndexOf('/') + 1);
+			document.body.appendChild(a);
+			a.click();
+			document.body.removeChild(a);
+	    },
+		error: function(data){
+			setTimeout(function(){
+				$("#overlay").fadeOut(300);
+			},500);
             Swal.fire({icon: 'error',title: 'Oops...',text: 'Intente de nuevo!'})
 		}
     });

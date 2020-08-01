@@ -118,4 +118,34 @@ class HomeController extends Controller
 
         return (new DescargarResultado( $id_busqueda ))->download('Descarga '. $id_busqueda .'.xlsx');
     }
+
+    public function descargarResultadoBib()
+    {
+        $id_busqueda = $_GET['id_busqueda'];
+        $datosBib = "";
+
+        $reporte = DB::table('informacion')->where('id_busqueda', $id_busqueda)
+               ->select('id', 'institucion', 'titulo', 'revista', 'autores', 'resumen', 'contenido', 'palabras', 'doi', 'idioma_articulo', 'ruta_html', 'ruta_pdf', 'paginas', 'issn', 'id_revista', 'id_articulo')
+               ->get();
+        $contador = 0;
+        foreach ($reporte as $repo) {
+          if ($contador == 0) {
+            $datosBib =  $datosBib . "@article{";
+          }else{
+            $datosBib =  $datosBib . "\n@article{";
+          }
+          
+          $datosBib = $datosBib . $repo->id.",\ninstitucion={".$repo->institucion."},\ntitulo={".$repo->titulo."},\nrevista={".$repo->revista."},\nautores={".$repo->autores."},\nresumen={".$repo->resumen."},\ncontenido={".$repo->contenido."},\npalabras={".$repo->palabras."},\ndoi={".$repo->doi."},\nidioma_articulo={".$repo->idioma_articulo."},\nruta_html={".$repo->ruta_html."},\nruta_pdf={".$repo->ruta_pdf."},\npaginas={".$repo->paginas."},\nissn={".$repo->issn."},\nid_revista={".$repo->id_revista."},\nid_articulo={".$repo->id_articulo."}},";
+          
+          $contador = $contador + 1;
+        }
+
+        $ubicacion = "bib/Descarga Bib " . $id_busqueda . ".bib";
+
+        $myfile = fopen($ubicacion, "w");
+        fwrite($myfile, substr($datosBib, 0, -1));
+        fclose($myfile);
+
+        return $ubicacion;
+    }
 }

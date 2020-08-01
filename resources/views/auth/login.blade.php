@@ -4,7 +4,7 @@
 <div class="container" style="height: auto;">
   <div class="row align-items-center">
     <div class="col-md-9 ml-auto mr-auto mb-3 text-center">
-      <h3>Login</h3>
+      <h3>Buscador de literatura científica en español</h3>
     </div>
     <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
       <form class="form" method="POST" action="{{ route('login') }}">
@@ -72,12 +72,12 @@
         </div>
       </form>
       <div class="row">
-        <div class="col-6">
-            @if (Route::has('password.request'))
-                <a href="{{ route('password.request') }}" class="text-light">
-                    <small>{{ __('Forgot password?') }}</small>
-                </a>
-            @endif
+        <div class="col-12">
+            <!--  -->
+          <center>
+            <img src="{{ asset('material') }}/img/umanizales.png" height="80" style="margin-right: 50px;">
+            <img src="{{ asset('material') }}/img/semillero.png" height="80" style="margin-left: 50px">     
+          </center>
         </div>
         <div class="col-6 text-right">
             <!-- <a href="{{ route('register') }}" class="text-light">

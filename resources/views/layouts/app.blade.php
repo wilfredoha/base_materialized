@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>M&W</title>
+    <title>BLCE</title>
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('material') }}/img/apple-icon.png">
     <link rel="icon" type="image/png" href="{{ asset('material') }}/img/favicon.png">
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
@@ -22,13 +22,13 @@
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-            @include('layouts.page_templates.auth')
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+          </form>
+          @include('layouts.page_templates.auth')
         @endauth
         @guest()
-            @include('layouts.page_templates.guest')
+          @include('layouts.page_templates.guest')
         @endguest
         <div id="overlay">
           <div class="cv-spinner">
@@ -37,10 +37,10 @@
         </div>
         <div class="fixed-plugin">
           <div class="dropdown show-dropdown">
-            <a href="#" data-toggle="dropdown">
+            <!-- <a href="#" data-toggle="dropdown">
               <i class="fa fa-cog fa-2x"> </i>
-            </a>
-            <ul class="dropdown-menu">
+            </a> -->
+            <!-- <ul class="dropdown-menu">
               <li class="header-title"> Sidebar Filters</li>
               <li class="adjustments-line">
                 <a href="javascript:void(0)" class="switch-trigger active-color">
@@ -79,12 +79,12 @@
               <li class="button-container">
                 <a href="https://www.creative-tim.com/product/material-dashboard-laravel" target="_blank" class="btn btn-primary btn-block">Free Download</a>
               </li>
-              <!-- <li class="header-title">Want more components?</li>
+              <li class="header-title">Want more components?</li>
                   <li class="button-container">
                       <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
                         Get the pro version
                       </a>
-                  </li> -->
+                  </li>
               <li class="button-container">
                 <a href="https://material-dashboard-laravel.creative-tim.com/docs/getting-started/laravel-setup.html" target="_blank" class="btn btn-default btn-block">
                   View Documentation
@@ -105,7 +105,7 @@
                 <br>
                 <br>
               </li>
-            </ul>
+            </ul> -->
           </div>
         </div>
         <!--   Core JS Files   -->

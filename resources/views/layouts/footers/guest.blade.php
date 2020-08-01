@@ -28,7 +28,7 @@
         &copy;
         <script>
             document.write(new Date().getFullYear())
-        </script> M&W <!-- <i class="material-icons">favorite</i> --> <!-- by -->
+        </script> BLCE <!-- <i class="material-icons">favorite</i> --> <!-- by -->
         <!-- <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> and <a href="https://www.updivision.com" target="_blank">UPDIVISION</a> for a better web. -->
         </div>
     </div>
