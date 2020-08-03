@@ -27,17 +27,7 @@
         </div>
       </div>
 
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header card-header-success">
-            <h4 class="card-title ">Detalles</h4>
-            <p class="card-category"> Búsqueda realizada  - filtros</p>
-          </div>
-          <div class="card-body">
-            <div id="detalle"></div>
-          </div>
-        </div>
-      </div>
+      <div id="detalle"></div>
 
       <div class="col-md-12">
         <div class="card">
@@ -64,8 +54,8 @@
                       <td>{!!$con->filtros!!}</td>
                       <td>
                         <center>
-                          <a class="btn btn-warning btn-sm" id="descargarResultado" data-id="{{$con->id}}" role="button" data-toggle="tooltip" data-placement="top" data-original-title="Descargar resultado"><icons-image _ngcontent-rgp-c22="" _nghost-rgp-c19=""><i _ngcontent-rgp-c19="" class="material-icons icon-image-preview text-white">get_app</i></icons-image></a>
-                          <a class="btn btn-primary btn-sm" id="descargarResultadoBib" data-id="{{$con->id}}" role="button" data-toggle="tooltip" data-placement="top" data-original-title="Descargar resultado"><icons-image _ngcontent-rgp-c22="" _nghost-rgp-c19=""><icons-image _ngcontent-yqq-c22="" _nghost-yqq-c19=""><span _ngcontent-yqq-c19="" class="material-icons icon-image-preview text-white">cloud_download</span></icons-image></a>
+                          <a class="btn btn-warning btn-sm" id="descargarResultado" data-id="{{$con->id}}" role="button" data-toggle="tooltip" data-placement="top" data-original-title="Descargar resultado" title="Descargar Excel"><icons-image _ngcontent-rgp-c22="" _nghost-rgp-c19=""><i _ngcontent-rgp-c19="" class="material-icons icon-image-preview text-white">get_app</i></icons-image></a>
+                          <a class="btn btn-primary btn-sm" id="descargarResultadoBib" data-id="{{$con->id}}" role="button" data-toggle="tooltip" data-placement="top" data-original-title="Descargar resultado" title="Descargar Bib"><icons-image _ngcontent-rgp-c22="" _nghost-rgp-c19=""><icons-image _ngcontent-yqq-c22="" _nghost-yqq-c19=""><span _ngcontent-yqq-c19="" class="material-icons icon-image-preview text-white">cloud_download</span></icons-image></a>
                         </center>
                       </td>
                     </tr>

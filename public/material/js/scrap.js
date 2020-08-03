@@ -97,8 +97,7 @@ $(document).on('click', '#btn_busqueda_filtro', function(){
     });
 
     filtro = '"'+filtroanio + "<br>" + filtroidio + "<br>" + filtrodisc + "<br>" + filtropais+'"';
-// alert(filtro);
-// return;
+
 	url = '"'+"service/r2020/getArticles/" + textoABuscar +"<<<"+cadenaYear+"<<<"+cadenaIdioma+"<<<"+cadenaDisciplina+"<<<"+cadenaPais+ "/paginador/50/0/default"+'"';
 	
 	$.ajax({
@@ -106,10 +105,14 @@ $(document).on('click', '#btn_busqueda_filtro', function(){
         url  : 'buscarPalabras',
         data : { url: url, filtro : filtro, textoABuscar : textoABuscar },
 		beforeSend: function(){
-			Swal.fire({icon: 'info',title: 'Descarga en proceso',text: 'Recibirá un email cuando su búsqueda se haya finalizado'})
+			$("#overlay").fadeIn(300);
 	    },
 		success: function(data){
-
+			setTimeout(function(){
+				$("#overlay").fadeOut(300);
+			},2000);
+			Swal.fire({icon: 'info',title: 'Descarga en proceso',text: 'Recibirá un email cuando su búsqueda se haya finalizado'})			
+			setTimeout(function(){ window.location.reload() }, 3000);
 	    },
 		error: function(data){
             Swal.fire({icon: 'error',title: 'Oops...',text: 'Intente de nuevo!'})
