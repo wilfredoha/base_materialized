@@ -54,8 +54,8 @@
                       <td>{!!$con->filtros!!}</td>
                       <td>
                         <center>
-                          <a class="btn btn-warning btn-sm" id="descargarResultado" data-id="{{$con->id}}" role="button" data-toggle="tooltip" data-placement="top" data-original-title="Descargar resultado" title="Descargar Excel">.XLS</a>
-                          <a class="btn btn-primary btn-sm" id="descargarResultadoBib" data-id="{{$con->id}}" role="button" data-toggle="tooltip" data-placement="top" data-original-title="Descargar resultado" title="Descargar Bib">.BIB</a>
+                          <a class="btn btn-warning btn-sm text-white" id="descargarResultado" data-id="{{$con->id}}" role="button" data-toggle="tooltip" data-placement="top" data-original-title="Descargar resultado" title="Descargar Excel">.XLS</a>
+                          <a class="btn btn-primary btn-sm text-white" id="descargarResultadoBib" data-id="{{$con->id}}" role="button" data-toggle="tooltip" data-placement="top" data-original-title="Descargar resultado" title="Descargar Bib">.BIB</a>
                         </center>
                       </td>
                     </tr>
