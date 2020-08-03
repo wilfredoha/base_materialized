@@ -54,8 +54,8 @@
                       <td>{!!$con->filtros!!}</td>
                       <td>
                         <center>
-                          <a class="btn btn-warning btn-sm" id="descargarResultado" data-id="{{$con->id}}" role="button" data-toggle="tooltip" data-placement="top" data-original-title="Descargar resultado" title="Descargar Excel"><icons-image _ngcontent-rgp-c22="" _nghost-rgp-c19=""><i _ngcontent-rgp-c19="" class="material-icons icon-image-preview text-white">get_app</i></icons-image></a>
-                          <a class="btn btn-primary btn-sm" id="descargarResultadoBib" data-id="{{$con->id}}" role="button" data-toggle="tooltip" data-placement="top" data-original-title="Descargar resultado" title="Descargar Bib"><icons-image _ngcontent-rgp-c22="" _nghost-rgp-c19=""><icons-image _ngcontent-yqq-c22="" _nghost-yqq-c19=""><span _ngcontent-yqq-c19="" class="material-icons icon-image-preview text-white">cloud_download</span></icons-image></a>
+                          <a class="btn btn-warning btn-sm" id="descargarResultado" data-id="{{$con->id}}" role="button" data-toggle="tooltip" data-placement="top" data-original-title="Descargar resultado" title="Descargar Excel">.XLS</a>
+                          <a class="btn btn-primary btn-sm" id="descargarResultadoBib" data-id="{{$con->id}}" role="button" data-toggle="tooltip" data-placement="top" data-original-title="Descargar resultado" title="Descargar Bib">.BIB</a>
                         </center>
                       </td>
                     </tr>
