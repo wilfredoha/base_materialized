@@ -24,7 +24,7 @@
         </li>
       </ul>
     </nav> -->
-    <a href="informacion">
+    <a href="../informacion">
       <div class="copyright float-center">
           &copy;
           <script>
