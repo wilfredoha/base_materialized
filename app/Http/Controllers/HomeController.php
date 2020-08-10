@@ -125,7 +125,7 @@ class HomeController extends Controller
         $datosBib = "";
 
         $reporte = DB::table('informacion')->where('id_busqueda', $id_busqueda)
-               ->select('id', 'institucion', 'titulo', 'revista', 'autores', 'resumen', 'contenido', 'palabras', 'doi', 'idioma_articulo', 'ruta_html', 'ruta_pdf', 'paginas', 'issn', 'id_revista', 'id_articulo')
+               ->select('id', 'institucion', 'titulo', 'revista', 'autores', 'resumen', 'contenido', 'palabras', 'doi', 'idioma_articulo', 'ruta_html', 'ruta_pdf', 'paginas', 'issn', 'id_revista', 'id_articulo', 'ano_articulo', 'numero_vol_revista')
                ->get();
         $contador = 0;
         foreach ($reporte as $repo) {
@@ -135,7 +135,7 @@ class HomeController extends Controller
             $datosBib =  $datosBib . "\n@article{";
           }
           $paginas = str_replace("-",",",$repo->paginas);
-          $datosBib = $datosBib . $repo->id.",\naffiliation={".$repo->institucion."},\ntitle={".$repo->titulo."},\njournal={".$repo->revista."},\nauthor={".$repo->autores."},\nabstract={".$repo->resumen."},\nautor_keywords={".$repo->palabras."},\ndoi={".$repo->doi."},\nurl={".$repo->ruta_html."},\npages={".$paginas."},\nart_number={".$repo->id_articulo."}},";
+          $datosBib = $datosBib . $repo->id.",\naffiliation={".$repo->institucion."},\ntitle={".$repo->titulo."},\njournal={".$repo->revista."},\nauthor={".$repo->autores."},\nabstract={".$repo->resumen."},\nautor_keywords={".$repo->palabras."},\ndoi={".$repo->doi."},\nurl={".$repo->ruta_html."},\npages={".$paginas."},\nart_number={".$repo->id_articulo."}},\nyear={".$repo->ano_articulo."}},\nvolume={".$repo->numero_vol_revista."}},";
           
           $contador = $contador + 1;
         }
