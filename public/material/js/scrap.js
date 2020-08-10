@@ -105,14 +105,14 @@ $(document).on('click', '#btn_busqueda_filtro', function(){
         url  : 'buscarPalabras',
         data : { url: url, filtro : filtro, textoABuscar : textoABuscar },
 		beforeSend: function(){
-			$("#overlay").fadeIn(300);
-	    },
-		success: function(data){
-			setTimeout(function(){
-				$("#overlay").fadeOut(300);
-			},2000);
+			// $("#overlay").fadeIn(300);
 			Swal.fire({icon: 'info',title: 'Descarga en proceso',text: 'Recibirá un email cuando su búsqueda se haya finalizado'})			
 			setTimeout(function(){ window.location.reload() }, 3000);
+	    },
+		success: function(data){
+			// setTimeout(function(){
+			// 	$("#overlay").fadeOut(300);
+			// },2000);
 	    },
 		error: function(data){
             Swal.fire({icon: 'error',title: 'Oops...',text: 'Intente de nuevo!'})
