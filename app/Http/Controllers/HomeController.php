@@ -134,8 +134,8 @@ class HomeController extends Controller
           }else{
             $datosBib =  $datosBib . "\n@article{";
           }
-          
-          $datosBib = $datosBib . $repo->id.",\ninstitucion={".$repo->institucion."},\ntitulo={".$repo->titulo."},\nrevista={".$repo->revista."},\nautores={".$repo->autores."},\nresumen={".$repo->resumen."},\ncontenido={".$repo->contenido."},\npalabras={".$repo->palabras."},\ndoi={".$repo->doi."},\nidioma_articulo={".$repo->idioma_articulo."},\nruta_html={".$repo->ruta_html."},\nruta_pdf={".$repo->ruta_pdf."},\npaginas={".$repo->paginas."},\nissn={".$repo->issn."},\nid_revista={".$repo->id_revista."},\nid_articulo={".$repo->id_articulo."}},";
+          $paginas = str_replace("-",",",$repo->paginas);
+          $datosBib = $datosBib . $repo->id.",\naffiliation={".$repo->institucion."},\ntitle={".$repo->titulo."},\njournal={".$repo->revista."},\nauthor={".$repo->autores."},\nabstract={".$repo->resumen."},\nautor_keywords={".$repo->palabras."},\ndoi={".$repo->doi."},\nurl={".$repo->ruta_html."},\npages={".$paginas."},\nart_number={".$repo->id_articulo."}},";
           
           $contador = $contador + 1;
         }
