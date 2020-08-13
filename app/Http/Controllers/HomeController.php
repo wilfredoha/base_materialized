@@ -140,6 +140,10 @@ class HomeController extends Controller
           $contador = $contador + 1;
         }
 
+        if (!file_exists('bib')) {
+          mkdir('bib', 0777, true);
+        }
+
         $ubicacion = "bib/Descarga Bib " . $id_busqueda . ".bib";
 
         $myfile = fopen($ubicacion, "w");
