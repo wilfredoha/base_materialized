@@ -99,14 +99,14 @@ $(document).on('click', '#btn_busqueda_filtro', function(){
     filtro = '"'+filtroanio + "<br>" + filtroidio + "<br>" + filtrodisc + "<br>" + filtropais+'"';
 
     if (cadenaYear == "" && cadenaIdioma == "" && cadenaDisciplina == "" && cadenaPais == "") {
-    	url = '"'+"service/r2020/getArticles/paginador/50/0/default"+'"';
+    	url = '"'+"service/r2020/getArticles/" + textoABuscar + "/paginador/50/0/default"+'"';
     }else{
     	url = '"'+"service/r2020/getArticles/" + textoABuscar +"<<<"+cadenaYear+"<<<"+cadenaIdioma+"<<<"+cadenaDisciplina+"<<<"+cadenaPais+ "/paginador/50/0/default"+'"';
     }
 
 	
 console.log(url)
-//return;	
+// return;	
 	$.ajax({
 		type : 'POST',
         url  : 'buscarPalabras',
