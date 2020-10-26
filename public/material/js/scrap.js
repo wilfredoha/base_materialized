@@ -56,6 +56,8 @@ $(document).on('click', '#btn_busqueda_filtro', function(){
     	return;
     }
     
+    $('#btn_busqueda_filtro').attr('disabled', 'true');
+
     $.each($("input[name='anio']:checked"), function(){
         if (cadenaYear == "") {
         	cadenaYear = $(this).val();
