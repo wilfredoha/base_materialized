@@ -49,7 +49,7 @@
     				   	</div>
     				   	
     				   	<p class="social">
-                            <a href="www.linkedin.com/in/wilfredoholguínarbeláez" target="_blank"><span class="fa fa-linkedin-square"></span></a>
+                            <a href="https://www.linkedin.com/in/wilfredoholguínarbeláez" target="_blank"><span class="fa fa-linkedin-square"></span></a>
     				   		<a href="https://github.com/wilfredoha"><span class="fa fa-github-square" target="_blank"></span></a>
     				   		<a href="mailto:wilfredoholguin76@gmail.com"><span class="fa fa-google-plus-square" target="_blank"></span></a>
     				   	</p>
