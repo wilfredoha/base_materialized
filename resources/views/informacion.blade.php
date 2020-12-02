@@ -38,7 +38,7 @@
     				
     		 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     				   
-    				   	<img class="img-rounded" alt="team-photo" src="https://media-exp1.licdn.com/dms/image/C4E03AQH06VSv_MRaUg/profile-displayphoto-shrink_200_200/0?e=1602720000&v=beta&t=nPXIOft4hW2fn7pXWqlIjg9WdXG3TjHW8hV_y3T99EI" width="60%">
+    				   	<img class="img-rounded" alt="team-photo" src="https://media-exp1.licdn.com/dms/image/C4E03AQH06VSv_MRaUg/profile-displayphoto-shrink_200_200/0?e=1612396800&v=beta&t=gptwHegzH0Bm91wtPylFswnzHDzzl-ppsj9Z22v2NPY" width="60%">
     				   	
     				   	<div class="team-member">
                         
@@ -49,7 +49,7 @@
     				   	</div>
     				   	
     				   	<p class="social">
-                            <a href="https://www.linkedin.com/in/wilfredo-holgu%C3%ADn-arbel%C3%A1ez-396771173/" target="_blank"><span class="fa fa-linkedin-square"></span></a>
+                            <a href="www.linkedin.com/in/wilfredoholguínarbeláez" target="_blank"><span class="fa fa-linkedin-square"></span></a>
     				   		<a href="https://github.com/wilfredoha"><span class="fa fa-github-square" target="_blank"></span></a>
     				   		<a href="mailto:wilfredoholguin76@gmail.com"><span class="fa fa-google-plus-square" target="_blank"></span></a>
     				   	</p>
